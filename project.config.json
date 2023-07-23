@@ -7,6 +7,7 @@
   "miniprogramRoot": "miniprogram/",
   "compileType": "miniprogram",
   "projectname": "ts-sass-demo",
+  "packNpmManually": true,
   "setting": {
     "useCompilerPlugins": [
       "typescript",
@@ -17,7 +18,14 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "condition": false
+    "condition": false,
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram/"
+      }
+    ]
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
