@@ -1,0 +1,10 @@
+<view class="swiper-container">
+  <swiper circular bindchange="onChange" class="swiper">
+    <swiper-item wx:for="{{ list }}" wx:key="index" class="swiper__item swiper__item--active">
+      <image src="{{ item.image }}" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+  <view class="dots">
+    <view wx:for="{{ list }}" wx:key="index" class="dots__item {{ current === index && 'dots__item--active' }}"></view>
+  </view>
+</view>
