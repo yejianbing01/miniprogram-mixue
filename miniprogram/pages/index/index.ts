@@ -1,3 +1,6 @@
+import pageApi from "../../api/page"
+import { SwiperData } from "../../components/i-swiper/types"
+
 // pages/index/index.ts
 Page({
 
@@ -5,21 +8,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperList: []
+    swiperList: <SwiperData[]> []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-    // const BASER_URL = 'https://mock.apifox.cn/m1/1646135-0-default'
-    wx.request({
-      method: 'GET',
-      url: 'https://mock.apifox.cn/m1/1646135-0-default/page/home',
-      success: (response: {data: {swiper: []}}) => {
-        this.setData({swiperList: response.data.swiper})
-      }
-    })
+  async onLoad() {
+    const { swiper } = await pageApi.home();
+    this.setData({ swiperList: swiper })
   },
 
   /**
