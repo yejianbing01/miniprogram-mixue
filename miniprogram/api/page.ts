@@ -1,4 +1,3 @@
-import { SwiperData } from "../components/i-swiper/types"
 import request from "./request"
 
 type HomePageData = {

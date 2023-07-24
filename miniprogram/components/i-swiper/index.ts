@@ -1,6 +1,3 @@
-import { canIUseGetUserProfile } from "../../miniprogram_npm/@vant/weapp/common/version";
-import { SwiperData } from "./types";
-
 // components/i-swiper/index.ts
 Component({
   /**

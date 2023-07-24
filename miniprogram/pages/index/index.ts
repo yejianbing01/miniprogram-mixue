@@ -1,5 +1,4 @@
 import pageApi from "../../api/page"
-import { SwiperData } from "../../components/i-swiper/types"
 
 // pages/index/index.ts
 Page({

@@ -1,4 +1,4 @@
-export type SwiperData = {
+type SwiperData = {
   image: string;
   type: 'path' | 'webview';
   target: string
