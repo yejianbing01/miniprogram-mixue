@@ -1,14 +1,19 @@
 view {
   // custom var
-  --primary-color: '#d32d15';
+  --primary-color: #d32d15;
 
   // vant var
-  --text-color: '#787878';
+  --text-color: #787878;
 
   // vant tabbar
   --tabbar-height: 90rpx;
   --tabbar-item-text-color: var(--text-color);
   --tabbar-item-active-color: var(--primary-color);
+
+  // vant button
+  --button-primary-background-color: var(--primary-color);
+  --button-primary-border-color: var(--primary-color);
+  --button-border-radius: 8rpx;
 
   // reset
   box-sizing: border-box;

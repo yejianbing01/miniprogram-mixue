@@ -1,43 +1,32 @@
-import pageApi from "../../api/page"
-import navigator from "../../utils/navigator";
-
-// pages/index/index.ts
+// pages/web-view/index.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList: <SwiperData[]> [],
-    iconNavigations: <IconNavigation[]> []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  async onLoad() {
-    const { swiper, iconNavigations } = await pageApi.home();
-    swiper[0].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/fb340b77ef6c4239b9d74e96ec5e5aed.gif'
-    swiper[1].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/23ffc4b5b08345ec99f118470c38a71c.jpg'
-    this.setData({ swiperList: swiper, iconNavigations })
-  },
+  onLoad() {
 
-  onIconNavigationTap(event: ItemParam){
-    const { type, target } = event.currentTarget.dataset.item;
-    navigator.to(type, target);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.getTabBar().init()
+
   },
 
   /**

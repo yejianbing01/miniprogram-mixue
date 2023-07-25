@@ -8,10 +8,22 @@
       <van-progress color="#d32d15" percentage="50" show-pivot="{{false}}" />
       <view class="description">再升1级可享【升级礼包】等6项权益</view>
     </view>
-    <view class="vip-card__coin">
+    <view class="vip-card__coin" style="display: none;">
       <image src="../../assets/images/coin.png" mode="aspectFill" />
       <text>32</text>
     </view>
+    <view class="vip-card-button">
+      <van-button type="primary" size="small">授权登录</van-button>
+    </view>
+  </view>
+
+  <view class="menu-card">
+    <image src="../../assets/images/menu-card.jpg" alt=""/>
+  </view>
+
+  <view class="icon-navigations">
+    <image wx:for="{{ iconNavigations }}" wx:key="index" src="{{ item.image }}" bind:tap="onIconNavigationTap" data-item="{{ item }}" class="icon-navigations__item">
+    </image>
   </view>
 
 </view>

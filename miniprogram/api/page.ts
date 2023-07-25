@@ -1,7 +1,8 @@
 import request from "./request"
 
 type HomePageData = {
-  swiper: SwiperData[]
+  swiper: SwiperData[],
+  iconNavigations: IconNavigation[]
 }
 
 const home = () => {

@@ -1,3 +1,5 @@
+import navigator from "../../utils/navigator";
+
 // components/i-swiper/index.ts
 Component({
   /**
@@ -23,6 +25,10 @@ Component({
   methods: {
     onChange(event: {detail: {current: number}}){
       this.setData({ current: event.detail.current })
+    },
+    onItemTap(event: ItemParam){
+      const currentItem = event.currentTarget.dataset.item;
+      navigator.to(currentItem.type, currentItem.target);
     }
   }
 })

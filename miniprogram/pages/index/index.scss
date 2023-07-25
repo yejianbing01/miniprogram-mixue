@@ -41,3 +41,27 @@
     }
   }
 }
+
+.menu-card {
+  @include cardStyle();
+  width: 690rpx;
+  height: 340rpx;
+  margin-top: 40rpx;
+  overflow: hidden;
+  image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-navigations {
+  margin-top: 40rpx;
+  width: 690rpx;
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    @include cardStyle();
+    width: 218rpx;
+    height: 160rpx;
+  }
+}

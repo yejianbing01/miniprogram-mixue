@@ -1,6 +1,6 @@
 <view class="swiper-container">
   <swiper circular autoplay bindchange="onChange" class="swiper">
-    <swiper-item wx:for="{{ list }}" wx:key="index" class="swiper__item swiper__item--active">
+    <swiper-item wx:for="{{ list }}" wx:key="index" bind:tap="onItemTap" data-item="{{ item }}" class="swiper__item swiper__item--active">
       <image src="{{ item.image }}" mode="aspectFill" />
     </swiper-item>
   </swiper>
