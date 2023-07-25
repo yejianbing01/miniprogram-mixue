@@ -13,12 +13,12 @@
       <text>32</text>
     </view>
     <view class="vip-card-button">
-      <van-button type="primary" size="small">授权登录</van-button>
+      <van-button type="primary" size="small" bind:tap="onLogin">授权登录</van-button>
     </view>
   </view>
 
   <view class="menu-card">
-    <image src="../../assets/images/menu-card.jpg" alt=""/>
+    <image src="../../assets/images/menu-card.jpg" alt="" bind:tap="onClickStore"/>
   </view>
 
   <view class="icon-navigations">

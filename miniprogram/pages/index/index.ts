@@ -19,12 +19,20 @@ Page({
     const { swiper, iconNavigations } = await pageApi.home();
     swiper[0].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/fb340b77ef6c4239b9d74e96ec5e5aed.gif'
     swiper[1].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/23ffc4b5b08345ec99f118470c38a71c.jpg'
-    this.setData({ swiperList: swiper, iconNavigations })
+    this.setData({ swiperList: swiper, iconNavigations });
   },
 
   onIconNavigationTap(event: ItemParam){
     const { type, target } = event.currentTarget.dataset.item;
     navigator.to(type, target);
+  },
+
+  onLogin(){
+    wx.navigateTo({ url: '/pages/login/index' });
+  },
+
+  onClickStore(){
+    wx.switchTab({ url: '/pages/store/index' });
   },
 
   /**
