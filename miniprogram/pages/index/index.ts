@@ -15,6 +15,8 @@ Page({
    */
   async onLoad() {
     const { swiper } = await pageApi.home();
+    swiper[0].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/fb340b77ef6c4239b9d74e96ec5e5aed.gif'
+    swiper[1].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/23ffc4b5b08345ec99f118470c38a71c.jpg'
     this.setData({ swiperList: swiper })
   },
 
