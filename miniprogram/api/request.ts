@@ -1,11 +1,6 @@
-type RequestMthod = 'OPTIONS' | 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT';
-type ErrorResponse = {
-  code: number;
-  message: string;
-}
 const BASE_URL = 'https://mock.apifox.cn/m1/1646135-0-default';
 
-const request = function<T>(method: RequestMthod, uri: string, data?: any): Promise<T>{
+const request = function<T>(method: RequestMthod, uri: string, data?: RequestData): Promise<T>{
   return new Promise((resolve, reject) => {
     wx.request({
       method,

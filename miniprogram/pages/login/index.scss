@@ -1,1 +1,39 @@
-/* pages/login/index.wxss */
+.page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 180rpx 74rpx;
+  .logo {
+    width: 136rpx;
+    height: 136rpx;
+    margin-bottom: 25rpx;
+  }
+
+  .mark {
+    font-size: 30rpx;
+    margin-bottom: 168rpx;
+  }
+
+  .intro {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 86rpx;
+  }
+
+  .tips {
+    font-style: 20rpx;
+    color: var(--text-color);
+    margin-bottom: 20rpx;
+  }
+
+  .login-btn {
+    width: 100%;
+    margin-bottom: 44rpx;
+  }
+
+  .cancel {
+    font-style: 26rpx;
+    color: var(--text-color);
+  }
+
+}
