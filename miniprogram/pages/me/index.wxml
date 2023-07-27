@@ -1,8 +1,13 @@
+<wxs src="../../wxs/utils.wxs" module="utils"/>
+
 <view class="page" style="padding-top: {{ paddingTop }}px;">
   <view class="user-section">
     <image class="user-section__avatar" src="../../assets/images/logo.png" mode=""/>
-    <view class="user-section__info">登录获得更多会员权益</view>
-    <van-button type="primary" size="small">授权登录</van-button>
+    <view wx:if="{{ app.currentUser }}" class="user-section__info">{{ utils.desensize(app.currentUser.mobile) }}</view>
+    <block wx:if="{{ !app.currentUser }}">
+      <view class="user-section__info">登录获得更多会员权益</view>
+      <van-button type="primary" size="small">授权登录</van-button>
+    </block>
   </view>
 
   <view class="info-card-section">

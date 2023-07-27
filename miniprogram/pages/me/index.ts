@@ -1,9 +1,8 @@
+import { storeBehavior } from "../../behavior/storeBehavior";
+
 // pages/me/index.ts
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  behaviors: [storeBehavior],
   data: {
     paddingTop: 0,
     menuList: [
