@@ -1,2 +1,46 @@
-<!--pages/me/index.wxml-->
-<text>pages/me/index.wxml</text>
+<view class="page" style="padding-top: {{ paddingTop }}px;">
+  <view class="user-section">
+    <image class="user-section__avatar" src="../../assets/images/logo.png" mode=""/>
+    <view class="user-section__info">登录获得更多会员权益</view>
+    <van-button type="primary" size="small">授权登录</van-button>
+  </view>
+
+  <view class="info-card-section">
+    <view class="info-card">
+      <view class="info-card__meta">
+        <view class="number">***</view>
+        <view class="unit">海王币</view>
+      </view>
+      <image class="info-card__icon" src="../../assets/images/me-coin.png" mode=""/>
+    </view>
+    <view class="info-card">
+      <view class="info-card__meta">
+        <view class="number">***</view>
+        <view class="unit">优惠券</view>
+      </view>
+      <image class="info-card__icon" src="../../assets/images/me-coupon.png" mode=""/>
+    </view>
+  </view>
+
+  <!-- <view class="menu-section">
+    菜单区域
+  </view> -->
+
+  <view class="menu-section">
+    <van-cell-group>
+      <van-cell wx:for="{{ menuList }}" wx:key="unique" size="large" title="{{ item.title }}" is-link border="{{ false }}">
+        <van-icon slot="icon" name="{{ item.icon }}" class="menu-section__icon" />
+      </van-cell>
+    </van-cell-group>
+  </view>
+
+  <view class="menu-section">
+    <van-cell-group>
+      <van-cell size="large" title="蜜雪冰城APP" value="下载APP体验" is-link border="{{ false }}">
+        <image slot="icon" src="../../assets/images/logo.png" class="menu-section__icon" mode=""/>
+      </van-cell>
+    </van-cell-group>
+  </view>
+
+  <view class="version">版本号：1.0.0</view>
+</view>

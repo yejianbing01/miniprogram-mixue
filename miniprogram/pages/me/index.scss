@@ -1,1 +1,72 @@
-/* pages/me/index.wxss */
+.page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #fbe7e6, 30%, #f8f8f8 50%);
+  padding: 0 30rpx;
+
+  .user-section {
+    width: 100%;
+    padding: 24rpx 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__avatar {
+      width: 120rpx;
+      height: 120rpx;
+      border-radius: 50%;
+      margin-right: 20rpx;
+    }
+    &__info {
+      flex-grow: 1;
+      font-size: 26rpx;
+    }
+  }
+
+  .info-card-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .info-card {
+      width: 332rpx;
+      padding: 20rpx 24rpx;
+      background-color: #fff;
+      border-radius: 8rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__meta {
+        font-size: 26rpx;
+        .number {
+          font-weight: bold;
+          margin-bottom: 20rpx;
+        }
+        .unit {
+          color: var(--text-color);
+        }
+      }
+      &__icon {
+        width: 72rpx;
+        height: 72rpx;
+      }
+    }
+  }
+
+  .menu-section {
+    width: 100%;
+    margin-top: 26rpx;
+    &__icon {
+      font-size: 36rpx;
+      margin-right: 26rpx;
+      width: 48rpx;
+      height: 48rpx;
+    }
+  }
+
+  .version {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: var(--text-color);
+  }
+
+}

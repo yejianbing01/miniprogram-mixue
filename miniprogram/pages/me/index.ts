@@ -5,13 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    paddingTop: 0,
+    menuList: [
+      { title: '兑换码', icon: 'qr' },
+      { title: '隐私协议', icon: 'shield-o' },
+      { title: '用户服务协议', icon: 'records' },
+      { title: '经营信息公示', icon: 'notes-o' },
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    const { bottom } = wx.getMenuButtonBoundingClientRect();
+    this.setData({ paddingTop: bottom })
   },
 
   /**
