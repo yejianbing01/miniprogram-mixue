@@ -8,6 +8,7 @@ const CURRENT_USER = 'current-user';
 export const appStore = observable({
   token: <string> wx.getStorageSync(TOKEN),
   currentUser: <UserType | null> wx.getStorageSync(CURRENT_USER),
+  activeTabbar: 0,
 
   login: action(async function(code: string){
     const token = await tokenApi.create(code);
@@ -37,6 +38,10 @@ export const appStore = observable({
     wx.clearStorage();
     appStore.token = '';
     appStore.currentUser = null;
+  }),
+
+  switchTabbar: action(function(value: number){
+    appStore.activeTabbar = value;
   })
 
 })

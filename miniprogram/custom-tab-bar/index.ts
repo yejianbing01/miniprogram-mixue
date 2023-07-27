@@ -1,10 +1,10 @@
+import { storeBehavior } from "../behavior/storeBehavior"
 import ErrorMessage from "../enums/ErrorMessage"
+import { appStore } from "../store/index"
 
 // custom-tab-bar/index.ts
 Component({
-  /**
-   * 组件的属性列表
-   */
+  behaviors: [storeBehavior],
   properties: {
 
   },
@@ -13,7 +13,6 @@ Component({
    * 组件的初始数据
    */
   data: {
-    active: 0,
     list: [
       {
         text: '首页',
@@ -47,11 +46,13 @@ Component({
    */
   methods: {
     onChange(event: { detail: number }){
-      this.setData({ active: event.detail })
+      appStore.switchTabbar(event.detail);
       wx.switchTab({
         url: this.data.list[event.detail].path
       })
     },
+    
+    // TODO: 优化
     init(){
       const currentPage = getCurrentPages().pop()
       if(!currentPage){
