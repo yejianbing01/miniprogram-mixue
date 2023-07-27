@@ -15,12 +15,15 @@ view {
   --button-primary-border-color: var(--primary-color);
   --button-border-radius: 8rpx;
 
+  // vant radio
+  --radio-checked-icon-color: var(--primary-color);
+
   // reset
   box-sizing: border-box;
 }
 
 page {
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
 .page {

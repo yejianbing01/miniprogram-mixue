@@ -1,41 +1,31 @@
 import { storeBehavior } from "../../behavior/storeBehavior";
 
-// pages/me/index.ts
+// pages/settings/index.ts
 Page({
   behaviors: [storeBehavior],
   data: {
-    paddingTop: 0,
-    menuList: [
-      { title: '兑换码', icon: 'qr' },
-      { title: '隐私协议', icon: 'shield-o' },
-      { title: '用户服务协议', icon: 'records' },
-      { title: '经营信息公示', icon: 'notes-o' },
-    ]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    const { bottom } = wx.getMenuButtonBoundingClientRect();
-    this.setData({ paddingTop: bottom })
-  },
 
-  goToSettings(){
-    wx.navigateTo({ url: '/pages/settings/index' });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.getTabBar().init()
+
   },
 
   /**

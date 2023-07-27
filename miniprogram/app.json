@@ -4,6 +4,7 @@
     "pages/store/index",
     "pages/order/index",
     "pages/me/index",
+    "pages/settings/index",
     "pages/web-view/index",
     "pages/login/index"
   ],
