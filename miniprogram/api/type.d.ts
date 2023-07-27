@@ -10,3 +10,10 @@ type HomePageData = {
   swiper: SwiperData[],
   iconNavigations: IconNavigation[]
 }
+
+type UserType = {
+  id: string;
+  mobile: number;
+  gender: 'MALE' | 'FEMALE' | 'UNKNOWN' |  null;
+  birthday?: string;
+}
