@@ -1,2 +1,33 @@
-<!--pages/store/index.wxml-->
-<text>pages/store/index.wxml</text>
+<view class="page">
+  <view class="header-section">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="附近门店"></van-tab>
+      <van-tab title="常用门店"></van-tab>
+    </van-tabs>
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+  </view>
+  <view class="map-section">
+    <map class="map"></map>
+    <view class="toggle-map">
+      收起地图
+<van-icon name="arrow-up" />
+    </view>
+  </view>
+  <view class="store-list-section">
+    <view class="store-card">
+      <view class="store-card__meta">
+        <view class="name">蜜雪冰城(潘水店)</view>
+        <view class="address">城厢借调潘水路26号</view>
+        <view class="opening-time">营业时间: 08:00 - 22:00</view>
+        <van-tag type="primary">正常营业</van-tag>
+      </view>
+      <view class="store-card__actions">
+        <view class="distance">距离2.7km</view>
+        <view class="actions">
+          <van-icon name="location" />
+          <van-icon name="phone" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -20,6 +20,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "订餐",
+          "pathName": "pages/store/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
