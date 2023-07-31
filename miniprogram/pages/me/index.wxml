@@ -6,7 +6,7 @@
     <view wx:if="{{ app.currentUser }}" class="user-section__info">{{ utils.desensize(app.currentUser.mobile) }}</view>
     <block wx:if="{{ !app.currentUser }}">
       <view class="user-section__info">登录获得更多会员权益</view>
-      <van-button type="primary" size="small">授权登录</van-button>
+      <van-button bind:tap="onClickLoginBtn" type="primary" size="small">授权登录</van-button>
     </block>
   </view>
 

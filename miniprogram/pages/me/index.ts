@@ -1,4 +1,5 @@
 import { storeBehavior } from "../../behavior/storeBehavior";
+import { appStore } from "../../store/app";
 
 // pages/me/index.ts
 Page({
@@ -22,7 +23,14 @@ Page({
   },
 
   goToSettings(){
+    if(!appStore.currentUser){
+      return
+    }
     wx.navigateTo({ url: '/pages/settings/index' });
+  },
+
+  onClickLoginBtn(){
+    wx.navigateTo({ url: '/pages/login/index' });
   },
 
   /**

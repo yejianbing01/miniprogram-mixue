@@ -3,6 +3,7 @@ type ErrorResponse = {
   code: number;
   message: string;
 }
+type Gender = 'MALE' | 'FEMALE' | 'UNKNOWN' |  null;
 
 type RequestData = string | WechatMiniprogram.IAnyObject | ArrayBuffer
 
@@ -14,6 +15,12 @@ type HomePageData = {
 type UserType = {
   id: string;
   mobile: number;
-  gender: 'MALE' | 'FEMALE' | 'UNKNOWN' |  null;
-  birthday?: string;
+  gender: Gender,
+  birthDay?: string;
+}
+
+type UserUpdateRequest = {
+  mobile?: number;
+  gender?: Gender,
+  birthDay?: string;
 }

@@ -42,6 +42,11 @@ export const appStore = observable({
 
   switchTabbar: action(function(value: number){
     appStore.activeTabbar = value;
+  }),
+
+  updateCurrentUser: action(async function(userUpdateRequest: UserUpdateRequest){
+    const updatedUser = await userApi.updateCurrent(userUpdateRequest);
+    appStore.setCurrentUser(updatedUser)
   })
 
 })
