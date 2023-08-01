@@ -1,3 +1,7 @@
+import storeApi from "../../api/store"
+import { Paging, Store } from "../../api/type"
+import { StoreStatus } from "../../enums/StoreStatus";
+
 // pages/store/index.ts
 Page({
 
@@ -5,13 +9,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    paging: <Paging> {
+      page: 1,
+      size: 10,
+      total: 0
+    },
+    storeList: <Store[]>[],
+    storeStatusDict: StoreStatus
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    this.fetchStoreList();
+  },
+
+  async fetchStoreList(){
+    const { paging, data } = await storeApi.list()
+    this.setData({
+      paging,
+      storeList: data
+    })
   },
 
   /**
