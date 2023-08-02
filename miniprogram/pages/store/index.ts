@@ -1,4 +1,5 @@
 import QQMapWX from "@jonny1994/qqmap-wx-jssdk";
+import { keys } from "mobx-miniprogram";
 import storeApi from "../../api/store"
 import { StoreStatus } from "../../enums/StoreStatus";
 const computedBehavior = require('miniprogram-computed').behavior
@@ -18,7 +19,8 @@ Page({
     storeList: <Store[]>[],
     storeStatusDict: StoreStatus,
     currentLocation: <Location | null> null,
-    markers: <MapMarker[]> []
+    markers: <MapMarker[]> [],
+    showMap: true
   },
   computed: {
     markers(data: { storeList: Store[] }): MapMarker[] {
@@ -98,6 +100,20 @@ Page({
   //     "provider": "wx76a9a06e5b4e693e"
   //   }
   // },
+
+  toggleMap(){
+    this.setData({ showMap: !this.data.showMap })
+  },
+
+  goToLocation(event: DataSetEvent<{location: Location}>){
+    wx.openLocation(event.currentTarget.dataset.location)
+  },
+
+  callPhone(event: DataSetEvent<{phone: string}>){
+    wx.makePhoneCall({
+      phoneNumber: event.currentTarget.dataset.phone
+     })
+  },
 
 
   /**

@@ -8,3 +8,9 @@ interface IAppOption {
 }
 
 type ItemParam = { currentTarget: {dataset:{item:SwiperData} }}
+
+type DataSetEvent<T> = {
+  currentTarget: {
+    dataset: T
+  }
+}
