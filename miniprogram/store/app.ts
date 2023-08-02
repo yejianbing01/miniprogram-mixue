@@ -7,7 +7,7 @@ const CURRENT_USER = 'current-user';
 
 export const appStore = observable({
   token: <string> wx.getStorageSync(TOKEN),
-  currentUser: <UserType | null> wx.getStorageSync(CURRENT_USER),
+  currentUser: <UserType|null> wx.getStorageSync(CURRENT_USER),
   activeTabbar: 0,
 
   login: action(async function(code: string){

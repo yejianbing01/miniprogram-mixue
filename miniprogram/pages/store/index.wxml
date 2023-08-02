@@ -7,13 +7,14 @@
     <van-search custom-class="search" shape="round" value="{{ value }}" placeholder="搜索门店" />
   </view>
   <view class="map-section">
-    <map class="map"></map>
+    <map class="map" show-location markers="{{ markers }}" latitude="{{ currentLocation.latitude }}" longitude="{{ currentLocation.longitude }}"></map>
     <view class="toggle-map">
-      收起地图<van-icon class="icon" name="arrow-up" />
+      收起地图
+      <van-icon class="icon" name="arrow-up" />
     </view>
   </view>
   <view class="store-card-section">
-    <view class="store-card" wx:for="{{ storeList }}" wx:key="index" >
+    <view class="store-card" wx:for="{{ storeList }}" wx:key="index">
       <view class="store-card__meta">
         <view class="name">{{ item.name }}</view>
         <view class="address">{{ item.address }}</view>
@@ -21,12 +22,13 @@
         <van-tag type="primary">{{ storeStatusDict[item.status] }}</van-tag>
       </view>
       <view class="store-card__actions">
-        <view class="distance">距离2.7km</view>
+        <view class="distance">距离{{ item.distance }}km</view>
         <view class="actions">
           <van-icon custom-class="action" name="location" />
           <van-icon custom-class="action" name="phone" />
         </view>
       </view>
     </view>
+    <van-loading custom-class="loading" type="spinner" vertical>加载中...</van-loading>
   </view>
 </view>

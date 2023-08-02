@@ -20,7 +20,7 @@ Page({
       wx.navigateBack()
     }
     this.setData({
-      mobile:  appStore.currentUser?.mobile,
+      mobile: appStore.currentUser?.mobile,
       gender: appStore.currentUser?.gender,
       birthDay: appStore.currentUser?.birthDay
     })
