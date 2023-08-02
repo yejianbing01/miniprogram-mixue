@@ -11,10 +11,18 @@
   "tabBar": {
     "custom": true,
     "list": [
-      { "pagePath": "pages/index/index" },
-      { "pagePath": "pages/store/index" },
-      { "pagePath": "pages/order/index" },
-      { "pagePath": "pages/me/index" }
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/store/index"
+      },
+      {
+        "pagePath": "pages/order/index"
+      },
+      {
+        "pagePath": "pages/me/index"
+      }
     ]
   },
   "permission": {

@@ -4,7 +4,7 @@
       <van-tab title="附近门店"></van-tab>
       <van-tab title="常用门店"></van-tab>
     </van-tabs>
-    <van-search custom-class="search" shape="round" value="{{ value }}" placeholder="搜索门店" />
+    <van-search custom-class="search" bind:tap="goToChooseLocation" shape="round" value="{{ value }}" placeholder="搜索门店" />
   </view>
   <view class="map-section">
     <map class="map" show-location markers="{{ markers }}" latitude="{{ currentLocation.latitude }}" longitude="{{ currentLocation.longitude }}"></map>

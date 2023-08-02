@@ -2,6 +2,7 @@ import QQMapWX from "@jonny1994/qqmap-wx-jssdk";
 import storeApi from "../../api/store"
 import { StoreStatus } from "../../enums/StoreStatus";
 const computedBehavior = require('miniprogram-computed').behavior
+// const chooseLocation = requirePlugin('chooseLocation');
 const mapKey = "5SOBZ-SJDL6-J47SK-MNS4A-OY7J2-4VBKA"
 
 // pages/store/index.ts
@@ -49,7 +50,10 @@ Page({
   },
 
   async fetchStoreList(){
-    const { paging, data } = await storeApi.list()
+    const { paging, data } = await storeApi.list({
+      ...this.data.paging,
+      ...this.data.currentLocation
+    })
     data.length && this.calcDistanceAndSetStoreList(data)
 
     this.setData({
@@ -77,6 +81,25 @@ Page({
     this.qqmapsdk = new QQMapWX({ key: mapKey });
   },
 
+  goToChooseLocation(){
+    return
+    const key = mapKey; //使用在腾讯位置服务申请的key
+    const referer = '蜜雪冰城'; //调用插件的app的名称
+    const location = JSON.stringify(this.data.currentLocation);
+    wx.navigateTo({
+      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location
+    });
+  },
+
+  // app.json 添加以下内容支持地图点选
+    // "plugins": {
+  //   "chooseLocation": {
+  //     "version": "1.0.10",
+  //     "provider": "wx76a9a06e5b4e693e"
+  //   }
+  // },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -89,6 +112,13 @@ Page({
    */
   onShow() {
     this.getTabBar().init()
+    // const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
+    // if(location){
+    //   this.setData({
+    //     currentLocation: { latitude: location.latitude, longitude: location.longitude}
+    //   })
+    //   this.fetchStoreList()
+    // }
   },
 
   /**
@@ -102,7 +132,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    // chooseLocation.setLocation(null)
   },
 
   /**
