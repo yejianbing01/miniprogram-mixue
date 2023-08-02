@@ -1,5 +1,4 @@
 import QQMapWX from "@jonny1994/qqmap-wx-jssdk";
-import { keys } from "mobx-miniprogram";
 import storeApi from "../../api/store"
 import { StoreStatus } from "../../enums/StoreStatus";
 const computedBehavior = require('miniprogram-computed').behavior
@@ -113,6 +112,12 @@ Page({
     wx.makePhoneCall({
       phoneNumber: event.currentTarget.dataset.phone
      })
+  },
+
+  goToCurrentLocation(){
+    wx.createSelectorQuery().select('#store-map').context((res)=>{
+      res.context.moveToLocation()
+    }).exec()
   },
 
 

@@ -7,7 +7,9 @@
     <van-search custom-class="search" bind:tap="goToChooseLocation" shape="round" value="{{ value }}" placeholder="搜索门店" />
   </view>
   <view class="map-section">
-    <map class="map {{ showMap || 'map--hidden' }}" show-location markers="{{ markers }}" latitude="{{ currentLocation.latitude }}" longitude="{{ currentLocation.longitude }}"></map>
+    <map id="store-map" class="map {{ showMap || 'map--hidden' }}" show-location markers="{{ markers }}" latitude="{{ currentLocation.latitude }}" longitude="{{ currentLocation.longitude }}">
+      <image bind:tap="goToCurrentLocation" class="map__current-location" src="../../assets/images/current.png" mode=""/>
+    </map>
     <view class="toggle-map" bind:tap="toggleMap" >
       {{ showMap ? '收起地图' : '展开地图'}}
       <van-icon class="icon" name="{{ showMap ? 'arrow-up' : 'arrow-down'}}" />

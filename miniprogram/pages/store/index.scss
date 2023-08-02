@@ -19,9 +19,17 @@
       width: 100%;
       height: 525rpx;
       transition: 0.3s;
+      position: relative;
       &--hidden {
         height: 0;
         opacity: 0;
+      }
+      &__current-location {
+        width: 50rpx;
+        height: 50rpx;
+        position: absolute;
+        bottom: 30rpx;
+        right: 20rpx;
       }
     }
     .toggle-map {
