@@ -18,8 +18,11 @@ Page({
    */
   async onLoad() {
     const { swiper, iconNavigations } = await pageApi.home();
-    swiper[0].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/fb340b77ef6c4239b9d74e96ec5e5aed.gif'
-    swiper[1].image = 'https://mxsa-oss.mxbc.net/oss/ad/20230722/23ffc4b5b08345ec99f118470c38a71c.jpg'
+    swiper[0].image = '../../assets/images/ban1.gif'
+    swiper[1].image = '../../assets/images/ban2.gif'
+    iconNavigations[0].image = '../../assets/images/nav1.gif'
+    iconNavigations[1].image = '../../assets/images/nav2.gif'
+    iconNavigations[2].image = '../../assets/images/nav3.gif'
     this.setData({ swiperList: swiper, iconNavigations });
   },
 
